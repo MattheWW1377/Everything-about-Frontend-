@@ -1,0 +1,225 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'vendor/css/style.min.css' %}">
+    <title>{{ title }}</title>
+</head>
+    <body>
+        <div class="wrapper">
+            <header>
+    <div class="container">
+        <div class="header__row">
+            <img src="{% static 'vendor/img/svgicons/logo.svg' %}" alt="logo">
+        </div>
+    </div>
+</header>
+            <main class="content">
+                <section class="page-intro intro-index">
+                    <div class="container">
+                        <div class="page-intro__row">
+                            <h1>Frontend-разработчик</h1>
+                            <h3>Содержание</h3>
+                            <ul class="page-intro__links">
+                                <li>Кто такой Frontend-разработчик</li>
+                                <li>Чем занимается Frontend-разработчик</li>
+                                <li>Что должен уметь фронтенд-разработчик</li>
+                                <li>Востребованы ли фронтендеры</li>
+                                <li>Где работать Frontend-разработчику</li>
+                                <li>Необходимые личные качества Frontend-разработчика</li>
+                                <li>Возможности карьерного роста</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="page-intro__bg">
+                        <div class="container">
+                            <div class="page-intro__img">
+                                <picture><source srcset="{% static 'vendor/img/index/intro.webp' %}" type="image/webp"><img src="{% static 'vendor/img/index/intro.png' %}" alt="intro"></picture>
+                            </div>
+                        </div>
+                        <div class="page-intro__shadow"></div>
+                    </div>
+                </section>
+                <section class="page-inner">
+                    <div class="container">
+                        <div class="page-inner__row">
+                            <aside class="page-aside aside-index">
+                                <ul class="page-aside__row aside-index__row">
+                                    <a class="page-aside__link aside-index__link" href="{% url 'index' %}"><li>Главная</li></a>
+                                    <a class="page-aside__link aside-index__link" href="{% url 'demand' %}"><li>Востребованность</li></a>
+                                    <a class="page-aside__link aside-index__link" href="{% url 'geography' %}"><li>География</li></a>
+                                    <a class="page-aside__link aside-index__link" href="{% url 'skills' %}"><li>Навыки</li></a>
+                                    <a class="page-aside__link aside-index__link" href="{% url 'recent_vacancies' %}"><li>Последние вакансии</li></a>
+                                </ul>
+                            </aside>
+                            <div class="page-content content-index">
+                                <div class="content-index__who">
+                                    <h2 class="page-content__title content-index__title">Кто такой Frontend-разработчик</h2>
+                                    <p class="page-content__text content-index__text" style="margin: 0px 0px 40px;">
+                                        Frontend разработчик - это специалист, который умеет верстать веб-страницы, имеет хорошие знания языка программирования JavaScript, знает один или несколько JavaScript-фреймворков (React, Angular, Vue.js), а также целый ряд других веб-технологий, которые используются во время создания клиентской стороны веб-сайта. Разработка функциональности пользовательского интерфейса сайта или веб-приложения - это главная задача Frontend разработчика.</p>
+                                    <p class="page-content__text content-index__text">Фронтенд-разработчик – это программист, который работает над пользовательским интерфейсом сайта. Результат его труда – удобные и красивые страницы с интерактивными эффектами. Сюда относится анимация, выпадающие списки, появление окон, меню и т. д. В отличие от верстальщика, фронтенд-разработчик не просто верстает сайты, используя HTML и CSS, но и программирует новые элементы сайта.</p>
+                                    <div class="page-content__img content-index__img">
+                                        <picture><source srcset="{% static 'vendor/img/index/index-one.webp' %}" type="image/webp"><img src="{% static 'vendor/img/index/index-one.png' %}" alt="index-one"></picture>
+                                    </div>
+                                    <p class="page-content__text content-index__text">Основная задача Front-end разработчика состоит в разработке пользовательского интерфейса, то есть UI дизайна. Другими словами, данный специалист отвечает за внешнюю часть веб-ресурса в браузере, с которой контактируют посетители. Именно поэтому он должен сделать интерфейс максимально удобным и интуитивно понятным, чтобы взаимодействие и процесс поиска нужного раздела или информации не занимало у человека много времени и переходов с одной страницы на другую.</p>
+                                    <p class="page-content__text content-index__text">Frontend-разработчик – это программист, который занимается созданием и техподдержкой пользовательского интерфейса сайта или веб-приложения.</p>
+                                    <div class="content-index__bg">
+                                        Если объяснять простыми словами, то фронтенд – это внешняя часть, которая видна посетителям: меню, текст, изображения, карточки товаров, формы, кнопки, динамические слайды, анимация и пр.
+                                    </div>
+                                </div>
+
+                                <div class="content-index__tasks">
+                                    <h2 class="page-content__title content-index__title">Чем занимается Frontend-разработчик</h2>
+                                    <p class="page-content__text content-index__text">Главная задача фронтендера – создать сайт или программу, которая будет функциональной, понятной, удобной для пользователей. Расскажем подробнее, чем именно занимается frontend-разработчик:</p>
+                                    <p class="page-content__text page-content__text__marker page-content__text__green content-index__text">
+                                        Создает внешнюю часть сайта или веб-приложения с нуля – проектирует архитектуру, верстает, добавляет текст, изображения, кнопки и пр.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker page-content__text__green content-index__text">
+                                        Программирует, чтобы страницы были интерактивными и работали внутренние ссылки.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker page-content__text__green content-index__text">
+                                        Тестирует проект на всех этапах разработки, ищет и устраняет баги.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker page-content__text__green content-index__text">
+                                        Делает так, чтобы веб-страницы корректно открывались на всех устройствах, браузерах и операционных системах.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker page-content__text__green content-index__text">
+                                        Сотрудничает с другими специалистами – веб-дизайнером, бэкенд-разработчиком, SEO-специалистом, веб-мастером и др.
+                                    </p>
+
+                                    <h2 class="page-content__title content-index__title"> Что должен уметь фронтенд-разработчик</h2>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Методологии верстки, HTML и CSS.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Язык программирования Javascript.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Библиотеки jQuery,React и фреймворки Vue, Angular.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Популярные CMS – WordPress, Битрикс, Modx и др.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Система управления версиями Git и сервис GitHub.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Общие представления о backend-разработке, базах данных и языке запросов SQL.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Навыки проектирования архитектуры веб-приложения.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Photoshop для разделения на части макетов от веб-дизайнера.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Основы UI/UX-дизайна и юзабилити.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Принципы кроссбраузерной и адаптивной верстки.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Английский на уровне чтения технической документации.
+                                    </p>
+
+                                    <div class="page-content__img content-index__img">
+                                        <picture><source srcset="{% static 'vendor/img/index/index-two.webp' %}" type="image/webp"><img src="{% static 'vendor/img/index/index-two.png' %}" alt="index-two"></picture>
+                                    </div>
+
+                                    <h2 class="page-content__title content-index__title"> Востребованы ли фронтендеры</h2>
+
+                                    <p class="page-content__text content-index__text">По данным HR-портала HeadHunter, уровень конкуренции во frontend-разработке ниже, чем в других отраслях. По статистике, на 1 вакантное место претендуют 4-5 кандидатов. Для сравнения в других профессиях этот показатель выше: от 7 до 10 резюме на одно предложение.</p>
+                                    <p class="page-content__text content-index__text">Frontend-программисты могут работать в разных условиях: в штате, на фрилансе, в офисе, удаленно, на себя и т. д. Бизнес активно переходит в онлайн, все больше компаний нуждаются в качественных и удобных сайтах, поэтому спрос на фронтендеров в последние годы остается стабильно высоким.</p>
+                                    <p class="page-content__text content-index__text">Изучив информацию на ХедХантере – на текущий момент опубликовано более 3500 актуальных вакансий для frontend-разработчиков. Из них более 200 – это должности без требований к опыту. Многие компании готовы трудоустраивать и обучать новичков.</p>
+                                    <p class="page-content__text content-index__text">Еще почти 1500 объявлений – вакансии с возможностью работать удаленно или в гибком графике. То есть при желании можно найти высокооплачиваемую работу в другом городе, например, в Москве или Санкт-Петербурге.</p>
+                                </div>
+                                <div class="content-index__work">
+                                    <h2 class="page-content__title content-index__title">Где работать Frontend-разработчику</h2>
+                                    <p class="page-content__text content-index__text">Перечислим отрасли, в которых может работать фронтенд-программист:</p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        IT-компании, занимающиеся коммерческой разработкой сайтов, приложений, ПО, корпоративных сервисов, CRM и пр.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Ритейл, интернет-магазины, маркетплейсы.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Финансовый сектор, банки, платежные системы.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Онлайн-образование.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Государственные учреждения.
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Развлекательные сервисы и сфера услуг.
+                                    </p>
+                                </div>
+                                <div class="content-index__skills">
+                                    <h2 class="page-content__title content-index__title">Необходимые личные качества Frontend-разработчика</h2>
+                                    <p class="page-content__text content-index__text">Как и во многих профессиях, при обучении на Frontend-разработчика важно держать в голове, какими личными качествами должен обладать фронтендер. Вот некоторые и самые основные из них:</p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Усидчивость и настойчивость
+                                    </p>
+                                    <p class="page-content__text content-index__text">Иметь их необходимо, так как дефекты порой приходится искать очень долго. Часто опыт показывает, что не существует идеальных программ, есть лишь лениво протестированные.</p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Критическое мышление, умение анализировать любую информацию
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Тщательность исследования, педантичность, дотошность, заставляющая проверять все варианты
+                                    </p>
+                                    <p class="page-content__text content-index__text">Многих в повседневной жизни может волновать вопрос: «А что произойдет, если». И фронтендер обязан проверять все такие «если» в каждом продукте, который он создаёт.</p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Коммуникабельность и умение работать в команде
+                                    </p>
+                                    <p class="page-content__text content-index__text">Специалист вынужден постоянно общаться со всеми, кто занят в разработке: представителями заказчика, дизайнерами, разработчиками, аналитиками.</p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Железное терпение и самообладание
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Ответственность
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Умение грамотно и четко формулировать свои мысли, доносить до собеседника свои слова
+                                    </p>
+                                    <p class="page-content__text page-content__text__marker content-index__text">
+                                        Стремление учиться и развиваться в выбранной профессии
+                                    </p>
+                                    <p class="page-content__text content-index__text">Чтобы оставаться востребованным, он должен постоянно осваивать новые техники, изучать тематическую литературу, принимать участие в семинарах и конференциях, смотреть видеокурсы.</p>
+                                    <p class="page-content__text content-index__text">Frontend-разработчику необходимо сотрудничать с большим количеством специалистов, поэтому отличным дополнением станет и то, умеет ли он находить с ними общий язык.</p>
+                                    <p class="page-content__text content-index__text">И конечно, Frontend-разработчик всегда должен думать о конечном пользователе продукта и четко представлять, насколько ему будет удобно пользоваться создаваемым продуктом.</p>
+                                </div>
+                                    <div class="page-content__img content-index__img">
+                                        <picture><source srcset="{% static 'vendor/img/index/index-three.webp' %}" type="image/webp"><img src="{% static 'vendor/img/index/index-three.png' %}" alt="index-three"></picture>
+                                    </div>
+                                <div class="content-index__career">
+                                    <h2 class="page-content__title content-index__title">Возможности карьерного роста</h2>
+                                    <p class="page-content__text content-index__text">Работа фронтендера предполагает довольно заметный карьерный рост. Все зависит от вашего желания двигаться дальше. Вот как это происходит внутри компании.</p>
+                                    <p class="page-content__text content-index__text">Первая ступень – <b>Junior frontend-разработчик</b>, начинающий специалист с опытом до 1 года. Он может самостоятельно сверстать макеты, написать простой код на Javascript.</p>
+                                    <p class="page-content__text content-index__text">Джуниор, старательно набирающий багаж знаний и хорошо показавший себя на своем месте, через 2-3 года получит повышение - <b>Middle frontend-разработчик</b>. Должность мидла позволит ему с нуля создать многостраничный сайт или интернет-магазин.</p>
+                                    <p class="page-content__text content-index__text">Год-полтора успешной работы мидлом – и можно говорить об уровне <b>Senior frontend-разработчик</b> (старший специалист). Зона ответственности увеличивается: в подчинении сеньора команда джуниоров, он сам планирует работы по созданию контента.</p>
+                                    <p class="page-content__text content-index__text">Зачастую он выступает одновременно в качестве технического руководителя и тимлида, который может управлять командой программистов: определяет стратегию, согласовывает условия с заказчиками, распределяет задачи между исполнителями, контролирует сроки, делает финальное код-ревью и отвечает за конечный результат.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="footer">
+    <div class="container">
+        <div class="footer__row">
+            <p>Автор: <br />
+                Удалых Максим Сергеевич<br />
+                РИ-210931
+            </p>
+        </div>
+    </div>
+</footer>
+        </div>
+    </body>
+</html>

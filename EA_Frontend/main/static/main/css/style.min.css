@@ -20,7 +20,7 @@
 }
 
 .content-index__img {
-  margin:40px 0 
+  margin:40px 0
 }
 
 .content-index__bg {
@@ -320,7 +320,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .content-demand__img {
   position:relative;
-  width:600px;
+  width:1000px;
   height:400px;
   overflow:hidden;
   margin:0 0 64px
@@ -351,7 +351,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .content-geography__img {
   position:relative;
-  width:600px;
+  width:1140px;
   height:400px;
   overflow:hidden;
   margin:0 0 64px
@@ -536,3 +536,34 @@ body {
   color: #08835E;
 }
 
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 5px solid #fff;
+  border-top: 5px solid #fff;
+  border-bottom: 3px solid #fff;
+  border-collapse: collapse;
+  outline: 3px solid #ffd300;
+  font-size: 15px;
+  background: #fff!important;
+}
+.table th {
+  font-weight: bold;
+  padding: 7px;
+  background: #B0E0E6;
+  border: none;
+  text-align: left;
+  font-size: 15px;
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #ffd300;
+}
+.table td {
+  padding: 7px;
+  border: none;
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  font-size: 15px;
+}
+.table tbody tr:nth-child(even) {
+  background: #f8f8f8!important;
+}

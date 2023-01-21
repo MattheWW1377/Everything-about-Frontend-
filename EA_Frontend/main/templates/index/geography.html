@@ -2,155 +2,169 @@
 
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'main/css/style.min.css' %}">
     <title>{{ title }}</title>
 </head>
-    <body>
-        <div class="wrapper">
-            <header>
-    <div class="container">
-        <div class="header__row">
-            <img src="{% static 'main/img/svgicons/logo.svg' %}" alt="logo">
+<body>
+<div class="wrapper">
+    <header>
+        <div class="container">
+            <div class="header__row">
+                <img src="{% static 'main/img/svgicons/logo.svg' %}" alt="logo">
+            </div>
         </div>
-    </div>
-</header>
-            <main class="content">
-                <section class="page-intro">
-                    <div class="container">
-                        <div class="page-intro__row">
-                            <h1>География</h1>
-                        </div>
+    </header>
+    <main class="content">
+        <section class="page-intro">
+            <div class="container">
+                <div class="page-intro__row">
+                    <h1>География</h1>
+                </div>
+            </div>
+            <div class="page-intro__bg">
+                <div class="container">
+                    <div class="page-intro__img intro-geography__img">
+                        <picture>
+                            <source srcset="{% static 'main/img/geography/intro.webp' %}" type="image/webp">
+                            <img src="{% static 'main/img/geography/intro.png' %}" alt="intro"></picture>
                     </div>
-                    <div class="page-intro__bg">
-                        <div class="container">
-                            <div class="page-intro__img intro-geography__img">
-                                <picture><source srcset="{% static 'main/img/geography/intro.webp' %}" type="image/webp"><img src="{% static 'main/img/geography/intro.png' %}" alt="intro"></picture>
-                            </div>
+                </div>
+                <div class="page-intro__shadow"></div>
+            </div>
+        </section>
+        <section class="page-inner">
+            <div class="container">
+                <div class="page-inner__row">
+                    <aside class="page-aside aside-index">
+                        <ul class="page-aside__row aside-index__row">
+                            <a class="page-aside__link aside-index__link" href="{% url 'index' %}">
+                                <li>Главная</li>
+                            </a>
+                            <a class="page-aside__link aside-index__link" href="{% url 'demand' %}">
+                                <li>Востребованность</li>
+                            </a>
+                            <a class="page-aside__link aside-index__link" href="{% url 'geography' %}">
+                                <li>География</li>
+                            </a>
+                            <a class="page-aside__link aside-index__link" href="{% url 'skills' %}">
+                                <li>Навыки</li>
+                            </a>
+                            <a class="page-aside__link aside-index__link" href="{% url 'recent_vacancies' %}">
+                                <li>Последние вакансии</li>
+                            </a>
+                        </ul>
+                    </aside>
+                    <div class="page-content content-geography">
+                        <h2 class="page-content__title content-geography__title">Динамика уровня зарплат/вакансий по
+                            годам</h2>
+                        {% for b in pic %}
+                        <div class="content-geography__img">
+                            <img src="/media/{{ b.picture}}">
                         </div>
-                        <div class="page-intro__shadow"></div>
+                        {% endfor %}
+                        <table class="table mt-5">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Город</th>
+                                <th scope="col">Уровень зарплат</th>
+                                <th scope="col">Город</th>
+                                <th scope="col">Доля вакансий</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr>
+                                <th scope="row">Киев</th>
+                                <td>155942</td>
+                                <th>Москва</th>
+                                <td>25,73%</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Москва</th>
+                                <td>109916</td>
+                                <th>Санкт-Петербург</th>
+                                <td>11,31%</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Санкт-Петербург</th>
+                                <td>95863</td>
+                                <th>Новосибирск</th>
+                                <td>3,24%</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Минск</th>
+                                <td>89762</td>
+                                <th>Минск</th>
+                                <td>2,83%</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Новосибирск</th>
+                                <td>86183</td>
+                                <th>Екатеринбург</th>
+                                <td>2,39%</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Екатеринбург</th>
+                                <td>82063</td>
+                                <th>Алматы</th>
+                                <td>2,25%</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Нижний Новгород</th>
+                                <td>76677</td>
+                                <th>Казань</th>
+                                <td>2,22%</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Казань</th>
+                                <td>75695</td>
+                                <th>Краснодар</th>
+                                <td>2,05%</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Самара</th>
+                                <td>69896</td>
+                                <th>Нижний Новгород</th>
+                                <td>1,86%</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Томск</th>
+                                <td>69552</td>
+                                <th>Ростов-на-Дону</th>
+                                <td>1,86%</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
                     </div>
-                </section>
-                <section class="page-inner">
-                    <div class="container">
-                        <div class="page-inner__row">
-                            <aside class="page-aside aside-index">
-                               <ul class="page-aside__row aside-index__row">
-                                    <a class="page-aside__link aside-index__link" href="{% url 'index' %}"><li>Главная</li></a>
-                                    <a class="page-aside__link aside-index__link" href="{% url 'demand' %}"><li>Востребованность</li></a>
-                                    <a class="page-aside__link aside-index__link" href="{% url 'geography' %}"><li>География</li></a>
-                                    <a class="page-aside__link aside-index__link" href="{% url 'skills' %}"><li>Навыки</li></a>
-                                    <a class="page-aside__link aside-index__link" href="{% url 'recent_vacancies' %}"><li>Последние вакансии</li></a>
-                                </ul>
-                            </aside>
-                            <div class="page-content content-geography">
-                                <h2 class="page-content__title content-geography__title">Динамика уровня зарплат/вакансий по годам</h2>
-                                <div class="content-geography__img">
-                                    <picture><source srcset="{% static 'main/img/geography/chart-one.webp' %}" type="image/webp"><img src="{% static 'main/img/geography/chart-one.png' %}" alt="chart-one"></picture>
-                                </div>
-
-                                 <table class="table mt-5">
-                <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Город</th>
-                    <th scope="col">Уровень зарплат</th>
-                    <th scope="col">Город</th>
-                    <th scope="col">Доля вакансий</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                    <tr>
-                        <th scope="row">Киев</th>
-                        <td>155942</td>
-                        <th>Москва</th>
-                        <td>25,73%</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Москва</th>
-                        <td>109916</td>
-                        <th>Санкт-Петербург</th>
-                        <td>11,31%</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Санкт-Петербург</th>
-                        <td>95863</td>
-                        <th>Новосибирск</th>
-                        <td>3,24%</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Минск</th>
-                        <td>89762</td>
-                        <th>Минск</th>
-                        <td>2,83%</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Новосибирск</th>
-                        <td>86183</td>
-                        <th>Екатеринбург</th>
-                        <td>2,39%</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Екатеринбург</th>
-                        <td>82063</td>
-                        <th>Алматы</th>
-                        <td>2,25%</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Нижний Новгород</th>
-                        <td>76677</td>
-                        <th>Казань</th>
-                        <td>2,22%</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Казань</th>
-                        <td>75695</td>
-                        <th>Краснодар</th>
-                        <td>2,05%</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Самара</th>
-                        <td>69896</td>
-                        <th>Нижний Новгород</th>
-                        <td>1,86%</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Томск</th>
-                        <td>69552</td>
-                        <th>Ростов-на-Дону</th>
-                        <td>1,86%</td>
-                    </tr>
-
-                </tbody>
-            </table>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-            <footer class="footer">
-    <div class="container">
-        <div class="footer__row">
-            <p>Автор: <br>
-                Удалых Максим Сергеевич<br>
-                РИ-210931
-            </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__row">
+                <p>Автор: <br>
+                    Удалых Максим Сергеевич<br>
+                    РИ-210931
+                </p>
+            </div>
         </div>
-    </div>
-</footer>
-        </div>
-    </body>
+    </footer>
+</div>
+</body>
 </html>

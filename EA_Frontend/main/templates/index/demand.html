@@ -3,148 +3,163 @@
 
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'main/css/style.min.css' %}">
     <title>{{ title }}</title>
 </head>
-    <body>
-        <div class="wrapper">
-            <header>
-    <div class="container">
-        <div class="header__row">
-            <img src="{% static 'main/img/svgicons/logo.svg' %}" alt="logo">
+<body>
+<div class="wrapper">
+    <header>
+        <div class="container">
+            <div class="header__row">
+                <img src="{% static 'main/img/svgicons/logo.svg' %}" alt="logo">
+            </div>
         </div>
-    </div>
-</header>
-            <main class="content">
-                <section class="page-intro intro-demand">
-                    <div class="container">
-                        <div class="page-intro__row">
-                            <h1>Востребованность</h1>
-                        </div>
+    </header>
+    <main class="content">
+        <section class="page-intro intro-demand">
+            <div class="container">
+                <div class="page-intro__row">
+                    <h1>Востребованность</h1>
+                </div>
+            </div>
+            <div class="page-intro__bg">
+                <div class="container">
+                    <div class="page-intro__img">
+                        <picture>
+                            <source srcset="{% static 'main/img/demand/intro.webp' %}" type="image/webp">
+                            <img src="{% static 'main/img/demand/intro.png' %}" alt="intro"></picture>
                     </div>
-                    <div class="page-intro__bg">
-                        <div class="container">
-                            <div class="page-intro__img">
-                                <picture><source srcset="{% static 'main/img/demand/intro.webp' %}" type="image/webp"><img src="{% static 'main/img/demand/intro.png' %}" alt="intro"></picture>
-                            </div>
+                </div>
+                <div class="page-intro__shadow"></div>
+            </div>
+        </section>
+        <section class="page-inner">
+            <div class="container">
+                <div class="page-inner__row">
+                    <aside class="page-aside aside-index">
+                        <ul class="page-aside__row aside-index__row">
+                            <a class="page-aside__link aside-index__link" href="{% url 'index' %}">
+                                <li>Главная</li>
+                            </a>
+                            <a class="page-aside__link aside-index__link" href="{% url 'demand' %}">
+                                <li>Востребованность</li>
+                            </a>
+                            <a class="page-aside__link aside-index__link" href="{% url 'geography' %}">
+                                <li>География</li>
+                            </a>
+                            <a class="page-aside__link aside-index__link" href="{% url 'skills' %}">
+                                <li>Навыки</li>
+                            </a>
+                            <a class="page-aside__link aside-index__link" href="{% url 'recent_vacancies' %}">
+                                <li>Последние вакансии</li>
+                            </a>
+                        </ul>
+                    </aside>
+                    <div class="page-content content-demand">
+                        <h2 class="page-content__title content-demand__title">Динамика уровня зарплат/вакансий по
+                            годам</h2>
+                        {% for b in pic %}
+                        <div class="content-demand__img">
+                            <img src="/media/{{ b.picture}} ">
                         </div>
-                        <div class="page-intro__shadow"></div>
+                        {% endfor %}
+                        <table class="table mt-5">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Год</th>
+                                <th scope="col">Средняя зарплата</th>
+                                <th scope="col">Средняя зарплата-инженер программист</th>
+                                <th scope="col">Количество вакансий</th>
+                                <th scope="col">Количество вакансий-инженер программист</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr>
+                                <th scope="row">2015</th>
+                                <td>57259</td>
+                                <td>60483</td>
+                                <td>9358</td>
+                                <td>365</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">2016</th>
+                                <td>67729</td>
+                                <td>65394</td>
+                                <td>28916</td>
+                                <td>1358</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">2017</th>
+                                <td>69632</td>
+                                <td>83345</td>
+                                <td>38682</td>
+                                <td>2135</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">2018</th>
+                                <td>91804</td>
+                                <td>93047</td>
+                                <td>58478</td>
+                                <td>3366</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">2019</th>
+                                <td>79153</td>
+                                <td>112691</td>
+                                <td>70559</td>
+                                <td>3669</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">2020</th>
+                                <td>75569</td>
+                                <td>110422</td>
+                                <td>87249</td>
+                                <td>3603</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">2021</th>
+                                <td>86650</td>
+                                <td>139245</td>
+                                <td>54116</td>
+                                <td>2487</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">2022</th>
+                                <td>102513</td>
+                                <td>153779</td>
+                                <td>17030</td>
+                                <td>746</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
                     </div>
-                </section>
-                <section class="page-inner">
-                    <div class="container">
-                        <div class="page-inner__row">
-                            <aside class="page-aside aside-index">
-                               <ul class="page-aside__row aside-index__row">
-                                    <a class="page-aside__link aside-index__link" href="{% url 'index' %}"><li>Главная</li></a>
-                                    <a class="page-aside__link aside-index__link" href="{% url 'demand' %}"><li>Востребованность</li></a>
-                                    <a class="page-aside__link aside-index__link" href="{% url 'geography' %}"><li>География</li></a>
-                                    <a class="page-aside__link aside-index__link" href="{% url 'skills' %}"><li>Навыки</li></a>
-                                    <a class="page-aside__link aside-index__link" href="{% url 'recent_vacancies' %}"><li>Последние вакансии</li></a>
-                                </ul>
-                            </aside>
-                            <div class="page-content content-demand">
-                                <h2 class="page-content__title content-demand__title">Динамика уровня зарплат/вакансий по годам</h2>
-                                <div class="content-demand__img">
-                                    <picture><source srcset="{% static 'main/img/demand/chart-one.webp' %}" type="image/webp"><img src="{% static 'main/img/demand/chart-one.png' %}" alt="chart-one"></picture>
-                                </div>
-                 <table class="table mt-5">
-                <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Год</th>
-                    <th scope="col">Средняя зарплата</th>
-                    <th scope="col">Средняя зарплата-инженер программист</th>
-                    <th scope="col">Количество вакансий</th>
-                    <th scope="col">Количество вакансий-инженер программист</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                    <tr>
-                        <th scope="row">2015</th>
-                        <td>57259</td>
-                        <td>60483</td>
-                        <td>9358</td>
-                        <td>365</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">2016</th>
-                        <td>67729</td>
-                        <td>65394</td>
-                        <td>28916</td>
-                        <td>1358</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">2017</th>
-                        <td>69632</td>
-                        <td>83345</td>
-                        <td>38682</td>
-                        <td>2135</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">2018</th>
-                        <td>91804</td>
-                        <td>93047</td>
-                        <td>58478</td>
-                        <td>3366</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">2019</th>
-                        <td>79153</td>
-                        <td>112691</td>
-                        <td>70559</td>
-                        <td>3669</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">2020</th>
-                        <td>75569</td>
-                        <td>110422</td>
-                        <td>87249</td>
-                        <td>3603</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">2021</th>
-                        <td>86650</td>
-                        <td>139245</td>
-                        <td>54116</td>
-                        <td>2487</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">2022</th>
-                        <td>102513</td>
-                        <td>153779</td>
-                        <td>17030</td>
-                        <td>746</td>
-                    </tr>
-
-                </tbody>
-            </table>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-            <footer class="footer">
-    <div class="container">
-        <div class="footer__row">
-            <p>Автор: <br>
-                Удалых Максим Сергеевич<br>
-                РИ-210931
-            </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__row">
+                <p>Автор: <br>
+                    Удалых Максим Сергеевич<br>
+                    РИ-210931
+                </p>
+            </div>
         </div>
-    </div>
-</footer>
-        </div>
-    </body>
+    </footer>
+</div>
+</body>
 </html>

@@ -1,22 +1,29 @@
 from django.shortcuts import render
 
-# Create your views here.
+from main.models import Vos, Main, Geo
+
 
 def index(request):
+    pic = Main.objects.all()
     context = {
-        'title': 'Главная'
+        'title': 'Главная',
+        'pic': pic
     }
     return render(request, 'index/index.html', context)
 
 def demand(request):
+    pic = Vos.objects.all()
     context = {
-        'title': 'Востребованность'
+        'title': 'Востребованность',
+        'pic': pic
         }
     return render(request, 'index/demand.html', context)
 
 def geography(request):
+    pic = Geo.objects.all()
     context = {
-        'title': 'География'
+        'title': 'География',
+        'pic': pic
     }
     return render(request, 'index/geography.html', context)
 

@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Vos, Geo, Main
 
-# Register your models here.
+admin.site.register(Vos)
+admin.site.register(Geo)
+admin.site.register(Main)

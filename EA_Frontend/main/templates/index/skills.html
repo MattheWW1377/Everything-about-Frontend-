@@ -2,67 +2,186 @@
 
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'main/css/style.min.css' %}">
     <title>{{ title }}</title>
 </head>
-    <body>
-        <div class="wrapper">
-            <header>
-    <div class="container">
-        <div class="header__row">
-            <img src="{% static 'main/img/svgicons/logo.svg' %}" alt="logo">
+<body>
+<div class="wrapper">
+    <header>
+        <div class="container">
+            <div class="header__row">
+                <img src="{% static 'main/img/svgicons/logo.svg' %}" alt="logo">
+            </div>
         </div>
-    </div>
-</header>
-            <main class="content">
-                <section class="page-intro">
-                    <div class="container">
-                        <div class="page-intro__row">
-                            <h1>Навыки</h1>
-                        </div>
+    </header>
+    <main class="content">
+        <section class="page-intro">
+            <div class="container">
+                <div class="page-intro__row">
+                    <h1>Навыки</h1>
+                </div>
+            </div>
+            <div class="page-intro__bg">
+                <div class="container">
+                    <div class="page-intro__img">
+                        <picture>
+                            <source srcset="{% static 'main/img/skills/intro.webp' %}" type="image/webp">
+                            <img src="{% static 'main/img/skills/intro.png' %}" alt="intro"></picture>
                     </div>
-                    <div class="page-intro__bg">
-                        <div class="container">
-                            <div class="page-intro__img">
-                                <picture><source srcset="{% static 'main/img/skills/intro.webp' %}" type="image/webp"><img src="{% static 'main/img/skills/intro.png' %}" alt="intro"></picture>
+                </div>
+                <div class="page-intro__shadow"></div>
+            </div>
+        </section>
+        <section class="page-inner">
+            <div class="container">
+                <div class="page-inner__row">
+                    <aside class="page-aside aside-index">
+                        <ul class="page-aside__row aside-index__row">
+                            <a class="page-aside__link aside-index__link" href="{% url 'index' %}">
+                                <li>Главная</li>
+                            </a>
+                            <a class="page-aside__link aside-index__link" href="{% url 'demand' %}">
+                                <li>Востребованность</li>
+                            </a>
+                            <a class="page-aside__link aside-index__link" href="{% url 'geography' %}">
+                                <li>География</li>
+                            </a>
+                            <a class="page-aside__link aside-index__link" href="{% url 'skills' %}">
+                                <li>Навыки</li>
+                            </a>
+                            <a class="page-aside__link aside-index__link" href="{% url 'recent_vacancies' %}">
+                                <li>Последние вакансии</li>
+                            </a>
+                        </ul>
+                    </aside>
+                    <div class="page-content content-vacancy">
+                        <h2 class="page-content__title content-vacancy__title">ТОП-10 навыков по годам для
+                            Frontend-разработчика</h2>
+                        <div class="content-vacancy__row">
+                            <div class="content-vacancy__item">
+                                <h3>2022</h3>
+                                <p>JavaScript</p>
+                                <p>HTML5</p>
+                                <p>Git</p>
+                                <p>CSS</p>
+                                <p>CSS3</p>
+                                <p>HTML</p>
+                                <p>jQuery</p>
+                                <p>React</p>
+                                <p>AngularJS</p>
+                                <p>Bootstrap</p>
+                            </div>
+                            <div class="content-vacancy__item">
+                                <h3>2021</h3>
+                                <p>JavaScript</p>
+                                <p>HTML5</p>
+                                <p>Git</p>
+                                <p>CSS</p>
+                                <p>CSS3</p>
+                                <p>HTML</p>
+                                <p>jQuery</p>
+                                <p>React</p>
+                                <p>AngularJS</p>
+                                <p>Bootstrap</p>
+                            </div>
+                            <div class="content-vacancy__item">
+                                <h3>2020</h3>
+                                <p>JavaScript</p>
+                                <p>HTML5</p>
+                                <p>CSS</p>
+                                <p>Git</p>
+                                <p>CSS3</p>
+                                <p>HTML</p>
+                                <p>jQuery</p>
+                                <p>AngularJS</p>
+                                <p>React</p>
+                                <p>Ajax</p>
+                            </div>
+                            <div class="content-vacancy__item">
+                                <h3>2019</h3>
+                                <p>JavaScript</p>
+                                <p>HTML5</p>
+                                <p>CSS</p>
+                                <p>Git</p>
+                                <p>HTML</p>
+                                <p>CSS3</p>
+                                <p>jQuery</p>
+                                <p>AngularJS</p>
+                                <p>Ajax</p>
+                                <p>Bootstrap</p>
+                            </div>
+                            <div class="content-vacancy__item">
+                                <h3>2018</h3>
+                                <p>JavaScript</p>
+                                <p>HTML5</p>
+                                <p>CSS</p>
+                                <p>HTML</p>
+                                <p>CSS3</p>
+                                <p>Git</p>
+                                <p>jQuery</p>
+                                <p>AngularJS</p>
+                                <p>Ajax</p>
+                                <p>Bootstrap</p>
+                            </div>
+                            <div class="content-vacancy__item">
+                                <h3>2017</h3>
+                                <p>JavaScript</p>
+                                <p>HTML5</p>
+                                <p>CSS3</p>
+                                <p>jQuery</p>
+                                <p>CSS</p>
+                                <p>HTML</p>
+                                <p>Git</p>
+                                <p>AngularJS</p>
+                                <p>Ajax</p>
+                                <p>Bootstrap</p>
+                            </div>
+                            <div class="content-vacancy__item">
+                                <h3>2016</h3>
+                                <p>JavaScript</p>
+                                <p>HTML5</p>
+                                <p>CSS3</p>
+                                <p>jQuery</p>
+                                <p>CSS</p>
+                                <p>Git</p>
+                                <p>HTML</p>
+                                <p>Ajax</p>
+                                <p>Bootstrap</p>
+                                <p>AngularJS</p>
+                            </div>
+                            <div class="content-vacancy__item">
+                                <h3>2015</h3>
+                                <p>JavaScript</p>
+                                <p>HTML5</p>
+                                <p>jQuery</p>
+                                <p>CSS3</p>
+                                <p>HTML</p>
+                                <p>CSS</p>
+                                <p>Bootstrap</p>
+                                <p>Git</p>
+                                <p>AngularJS</p>
+                                <p>Ajax</p>
                             </div>
                         </div>
-                        <div class="page-intro__shadow"></div>
                     </div>
-                </section>
-                <section class="page-inner">
-                    <div class="container">
-                        <div class="page-inner__row">
-                            <aside class="page-aside aside-index">
-                                 <ul class="page-aside__row aside-index__row">
-                                    <a class="page-aside__link aside-index__link" href="{% url 'index' %}"><li>Главная</li></a>
-                                    <a class="page-aside__link aside-index__link" href="{% url 'demand' %}"><li>Востребованность</li></a>
-                                    <a class="page-aside__link aside-index__link" href="{% url 'geography' %}"><li>География</li></a>
-                                    <a class="page-aside__link aside-index__link" href="{% url 'skills' %}"><li>Навыки</li></a>
-                                    <a class="page-aside__link aside-index__link" href="{% url 'recent_vacancies' %}"><li>Последние вакансии</li></a>
-                                </ul>
-                            </aside>
-                            <div class="page-content content-skills">
-                                <h2 class="page-content__title content-skills__title">Страница временно не работает</h2>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-            <footer class="footer">
-    <div class="container">
-        <div class="footer__row">
-            <p>Автор: <br>
-                Удалых Максим Сергеевич<br>
-                РИ-210931
-            </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__row">
+                <p>Автор: <br>
+                    Удалых Максим Сергеевич<br>
+                    РИ-210931
+                </p>
+            </div>
         </div>
-    </div>
-</footer>
-        </div>
-    </body>
+    </footer>
+</div>
+</body>
 </html>
